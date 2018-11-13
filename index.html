@@ -1,0 +1,56 @@
+{% include templates/header %}
+
+<div class="container">
+<div class="card">
+<div class="card-body">
+<div class="row">
+  <div class="col-sm-4">
+      <h2 class="card-title">{{ title }}</h2>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-body">
+<div class="row">
+      <h3 class="card-title">What tasks are on?!</h3>
+
+      {% if items %}
+      {% each items, item %}
+      {% end %}
+      {% else %}
+      <p>No tasks to report!</p>
+      {% end %}
+
+</div>
+</div>
+</div>
+
+<form action="#" method="post" class="needs-validation" novalidate>
+    <div class="form-group">
+        <label class="col-form-label-lg" for="user">Task Description:</label>
+        <textarea rows="4" cols="80" class="form-control form-control-lg" type="text" name="user" id="user" maxlength="100" required></textarea>
+    </div>
+    <div class="form-group">
+        <label for="ss">Hour(s)</label>
+        <input class="form-control" type="number" name="day" id="day" min="0" required>
+    </div>
+    <div class="form-group">
+        <label for="name">Minute(s):</label>
+        <input class="form-control" type="number" name="hours" id="hours" min="0" required>
+    </div>
+    <div class="form-group">
+        <label for="aP">Apellido Paterno:</label>
+        <input class="form-control" type="number" name="minutes" id="minutes" min="0" required>
+    </div>
+    <div class="form-group">
+        <label for="aM">Apellido Materno:</label>
+        <input class="form-control" type="number" name="seconds" id="seconds" min="0" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Create Task!</button>
+</form>
+<br><br>
+</div>
+</div>
+</div>
+{% include templates/footer %}
