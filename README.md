@@ -5,9 +5,13 @@ This is a management assitant tool made in swi-prolog based on the GTD managemen
 ## Getting Started
 
 Clone the package.
+
 run swi-prolog (<= 7.x)
+
 run the module ``` [prologGTD]. ```
+
 You are all set!
+
 Go to localhost:8000
 
 ### Prerequisites
@@ -36,7 +40,7 @@ Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-* [SWI-prolog](http://www.dropwizard.io/1.0.2/docs/) - Stack Framework
+* [SWI-prolog](http://www.dropwizard.io/1.0.2/docs/) - Functional Language
 
 ## Authors
 
@@ -49,4 +53,4 @@ This project is licensed under the GPL3 License - see the [LICENSE.md](LICENSE.m
 ## Acknowledgments
 
 * [The GTD philosophy](https://gettingthingsdone.com/five-steps/)
-* [Tutorial - Creating Web Applications in SWI-Prolog] (http://www.pathwayslms.com/swipltuts/html/index.html)
+* [Tutorial - Creating Web Applications in SWI-Prolog](http://www.pathwayslms.com/swipltuts/html/index.html)
