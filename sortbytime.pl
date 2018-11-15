@@ -106,7 +106,7 @@ taskToFormat(X):-
 	Desc \= "".
 
 writeIn(Stream,String):-
-	write(Stream,String),
+	writeq(Stream,String),
 	writeln(Stream,'.').
 
 %update the tasks file

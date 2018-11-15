@@ -212,7 +212,7 @@ index(_Request) :-
 
 
 %knowledge base of parameters
-param(desc,[default]).
+param(desc,[string]).
 param(day,[integer]).
 param(hour,[integer]).
 param(minute,[integer]).

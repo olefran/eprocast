@@ -6,7 +6,7 @@ This is a time management assitant tool, made in swi-prolog, based on the GTD ma
 
 Clone the package.
 
-run swi-prolog (<= 7.2.x)
+run swi-prolog
 
 run the module ``` [prologGTD]. ```
 
@@ -18,7 +18,7 @@ Go to localhost:8000
 
 This package requires:
 
-SWI-prolog <= 7.x
+SWI-prolog (<= 7.2.x)
 
 rla's simple template
 
