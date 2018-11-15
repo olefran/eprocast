@@ -1,2 +1,2 @@
-act{day:0,desc:"Say hello to the world!",hour:1,minute:0,second:0}.
-act{day:80,desc:"To be myself.",hour:0,minute:0,second:0}.
+act{day:100,desc:"To be myself and to be free",hour:0,minute:0,second:0}.
+act{day:0,desc:"Go out hiking",hour:4,minute:4,second:0}.

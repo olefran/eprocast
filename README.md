@@ -20,7 +20,7 @@ This package requires:
 
 SWI-prolog (<= 7.2.x)
 
-rla's simple template
+[rla's simple template](https://github.com/rla/simple-template)
 
 
 ### Installing
