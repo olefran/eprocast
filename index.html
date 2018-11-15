@@ -1,56 +1,133 @@
-{% include templates/header %}
+
 
 <div class="container">
+  <div class="row">
+<div class="col-md-6" style="padding=0.5em;">
 <div class="card">
 <div class="card-body">
+  <h3 class="card-title">Task list!</h3>
 <div class="row">
-  <div class="col-sm-4">
-      <h2 class="card-title">{{ title }}</h2>
-</div>
-</div>
-</div>
-
-<div class="card">
-<div class="card-body">
-<div class="row">
-      <h3 class="card-title">What tasks are on?!</h3>
-
+      {% if first  %}
+      <table style="width:100%" class="table table-striped">
+        <tr>
+          <th>You can do:</th>
+          <th>In:</th>
+          <th></th>
+        </tr>
+        <tr>
+         <td class="table-primary">{{ first.desc }}  <strong>*highly recomended*</strong></td>
+         <td class="table-primary">
+           {% if first.day \= 0 %}
+           {{first.day}} day{% if first.day > 1 %}s{% end %}
+           {% end %}
+           {% if first.hour \= 0 %}
+           {{first.hour}} hour{% if first.hour > 1 %}s{% end %}
+           {% end %}
+           {% if first.minute \= 0 %}
+           {{first.minute}} minute{% if first.minute > 1 %}s{% end %}
+           {% end %}
+           {% if first.second \= 0 %}
+           {{first.second}} second{% if first.second > 1 %}s{% end %}
+           {% end %}
+         </td>
+         <td class="table-primary">
+           <form action="/deletetask" method="post" class="needs-validation" novalidate>
+            <input class="form-control" type="hidden" name="desc" id="desc" value="{{first.desc}}" required>
+             <input class="form-control" type="hidden" name="day" id="day" min="0" value="{{first.day}}" required>
+             <input class="form-control" type="hidden" name="hour" id="hour" value="{{first.hour}}" min="0" required>
+             <input class="form-control" type="hidden" name="minute" id="minute" value="{{first.minute}}" min="0" required>
+             <input class="form-control" type="hidden" name="second" id="second" value="{{first.second}}" min="0" required>
+           <button type="submit" class="btn btn-danger">done</button>
+           </form>
+         </td>
+        </tr>
       {% if items %}
       {% each items, item %}
+      <tr>
+       <td>{{ item.desc }}</td>
+       <td>
+         {% if item.day \= 0 %}
+         {{item.day}} day{% if item.day > 1 %}s{% end %}
+         {% end %}
+         {% if item.hour \= 0 %}
+         {{item.hour}} hour{% if item.hour > 1 %}s{% end %}
+         {% end %}
+         {% if item.minute \= 0 %}
+         {{item.minute}} minute{% if item.minute > 1 %}s{% end %}
+         {% end %}
+         {% if item.second \= 0 %}
+         {{item.second}} second{% if item.second > 1 %}s{% end %}
+         {% end %}
+       </td>
+       <td>
+         <form action="/deletetask" method="post" class="needs-validation" novalidate>
+          <input class="form-control" type="hidden" name="desc" id="desc" value="{{item.desc}}" required>
+           <input class="form-control" type="hidden" name="day" id="day" min="0" value="{{item.day}}" required>
+           <input class="form-control" type="hidden" name="hour" id="hour" value="{{item.hour}}" min="0" required>
+           <input class="form-control" type="hidden" name="minute" id="minute" value="{{item.minute}}" min="0" required>
+           <input class="form-control" type="hidden" name="second" id="second" value="{{item.second}}" min="0" required>
+         <button type="submit" class="btn btn-danger">done</button>
+         </form>
+       </td>
+       {% end %}
+      </tr>
       {% end %}
+      </table>
       {% else %}
-      <p>No tasks to report!</p>
+      <div class="container"><p>No tasks to report!</p></div>
       {% end %}
+</div>
+</div>
+</div>
+</div>
 
-</div>
-</div>
-</div>
-
-<form action="#" method="post" class="needs-validation" novalidate>
+<div class="col-md-6" style="padding=0.5em;">
+<div class="card">
+<div class="card-body">
+  <h3 class="card-title">Want to add a task?</h3>
+<form action="/createtask" method="post" class="needs-validation" novalidate>
+  <div class="row">
     <div class="form-group">
-        <label class="col-form-label-lg" for="user">Task Description:</label>
-        <textarea rows="4" cols="80" class="form-control form-control-lg" type="text" name="user" id="user" maxlength="100" required></textarea>
+        <label for="desc">Task Description:</label>
+        <textarea rows="4" cols="80" class="form-control form-control-lg" type="text" name="desc" id="desc" maxlength="100" required></textarea>
     </div>
-    <div class="form-group">
-        <label for="ss">Hour(s)</label>
-        <input class="form-control" type="number" name="day" id="day" min="0" required>
+  </div>
+  <div class="row">
+    <div class="form-group col-lg-2">
+        <label for="day">Days(s):</label>
+        <input class="form-control" type="number" name="day" id="day" min="0" value="0" required>
     </div>
-    <div class="form-group">
-        <label for="name">Minute(s):</label>
-        <input class="form-control" type="number" name="hours" id="hours" min="0" required>
+    <div class="form-group col-lg-2">
+        <label for="hour">Hour(s):</label>
+        <input class="form-control" type="number" name="hour" id="hour" value="0" min="0" required>
     </div>
-    <div class="form-group">
-        <label for="aP">Apellido Paterno:</label>
-        <input class="form-control" type="number" name="minutes" id="minutes" min="0" required>
+    <div class="form-group col-lg-2">
+        <label for="minute">Minute(s):</label>
+        <input class="form-control" type="number" name="minute" id="minute" value="0" min="0" required>
     </div>
-    <div class="form-group">
-        <label for="aM">Apellido Materno:</label>
-        <input class="form-control" type="number" name="seconds" id="seconds" min="0" required>
+    <div class="form-group col-lg-2">
+        <label for="second">Second(s):</label>
+        <input class="form-control" type="number" name="second" id="second" value="0" min="0" required>
+    </div>
     </div>
     <button type="submit" class="btn btn-primary">Create Task!</button>
 </form>
 <br><br>
+<div class="row">
+  <div class="form-group col-md-4">
+    <a href="/createfile">Create file.</a>
+  </div>
+  <div class="form-group col-md-4">
+    <strong>Or</strong>
+  </div>
+  <div class="form-group col-md-4">
+    <a href="/readfile">Read file.</a>
+  </div>
 </div>
 </div>
 </div>
+</div>
+</div>
+</div>
+<br><br>
 {% include templates/footer %}

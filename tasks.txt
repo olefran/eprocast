@@ -1,6 +1,1 @@
---------- Tasks -----------
-
-Jugar con my perro,0,0,30,0
-Lavar los trastes,0,1,0,0
-Desear a mi familia buenos dias,0,0,0,50
-Bañarme,0,0,30,0
+act{day:0,desc:lewlew,hour:3,minute:0,second:0}.

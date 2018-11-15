@@ -1,12 +1,12 @@
 # PrologGTD
 
-This is a management assitant tool made in swi-prolog based on the GTD management philosophy.
+This is a time management assitant tool, made in swi-prolog, based on the GTD management philosophy.
 
 ## Getting Started
 
 Clone the package.
 
-run swi-prolog (<= 7.x)
+run swi-prolog (<= 7.2.x)
 
 run the module ``` [prologGTD]. ```
 
