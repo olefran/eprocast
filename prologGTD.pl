@@ -45,6 +45,9 @@ server(Port) :-
 %start the server in localhost
 :- server(8000).
 
+start:-
+		  server(8000).
+
 %render main page
 index(_Request) :-
         make,
@@ -192,9 +195,6 @@ index(_Request) :-
                     <body>
                       <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <a class="navbar-brand" href="#">PrologGTD</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                   <div class="navbar-nav">
                   </div>
@@ -230,7 +230,7 @@ create_task(Request) :-
                       [ attribute_declarations(param)
                       ]),
         member(method(post), Request), !,
-        assertz(task(act{desc:Desc ,day:Day,hour:Hour,minute:Minute,second:Second})),
+        assertz(task(act{desc:Desc,day:Day,hour:Hour,minute:Minute,second:Second})),
         index(Request).
 
 remove_task(Request) :-

@@ -34,9 +34,9 @@ pack_install(simple_template).
 
 If you ``` [prologGTD]. ``` and returns "Started server at http://localhost:8000/", you are all set!
 
-## Deployment
+## Stand Alone Executable
 
-Add additional notes about how to deploy this on a live system
+Go to [release](https://github.com/olefran/eprocast/releases/tag/0.1)
 
 ## Built With
 
